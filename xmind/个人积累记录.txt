@@ -1,0 +1,599 @@
+﻿int i=(int)1.14;   i=1
+
+double精度
+double temp=(rowmap.getDouble("TRAFFIC_VOLUME"))/day;
+ 			Double toBeTruncated = new Double(temp);
+			Double truncatedDouble = BigDecimal.valueOf(toBeTruncated)
+			    .setScale(4, RoundingMode.HALF_UP).doubleValue();//设置double精度
+				
+js 里0.0只显示成0
+即使设置成float类型，不起作用，ParseFloat()方法也不起作用，尝试使用(0.0).toFixed(1); 可以正常显示成0.0
+
+对对象的某个属性进行排名
+	private List<KeyPlotData> sortListData(List<KeyPlotData> keyPlotDatalist,String sortField) {
+	        Collections.sort(keyPlotDatalist, (o1, o2) -> {
+	        	if("trafficVolume".equals(sortField)||"".equals(sortField)) {
+	        		if (o2.getTrafficVolume() > o1.getTrafficVolume()) {
+		                return 1;
+		            }
+	        		if (o2.getTrafficVolume() == o1.getTrafficVolume()) {
+		                return o2.getKeyPlotName().compareTo(o1.getKeyPlotName()); //适用于英文，英文排序默认根据英文ASCII码进行排序
+		            }
+	        	}
+	            
+	        	if("trafficVolume_In".equals(sortField)||"".equals(sortField)) {
+	        		if (o2.getTrafficVolume_In() > o1.getTrafficVolume_In()) {
+		                return 1;
+		            }
+	        		if (o2.getTrafficVolume() == o1.getTrafficVolume()) {
+		                return o2.getKeyPlotName().compareTo(o1.getKeyPlotName()); //适用于英文，英文排序默认根据英文ASCII码进行排序
+		            }
+	        	}
+	        	if("trafficVolume_Out".equals(sortField)||"".equals(sortField)) {
+	        		if (o2.getTrafficVolume_Out() > o1.getTrafficVolume_Out()) {
+		                return 1;
+		            }
+	        		if (o2.getTrafficVolume() == o1.getTrafficVolume()) {
+		                return o2.getKeyPlotName().compareTo(o1.getKeyPlotName()); //适用于英文，英文排序默认根据英文ASCII码进行排序
+		            }
+	        	}
+	            return -1;
+	        });
+	        return keyPlotDatalist;
+	}
+	
+		private List<KeyPlotData> sortListData(List<KeyPlotData> keyPlotDatalist,String sortField) {
+		
+		Collections.sort(keyPlotDatalist, new Comparator<KeyPlotData>() {
+			@Override
+			public int compare(KeyPlotData o1, KeyPlotData o2) {
+				if (o2.getTrafficVolume() >= o1.getTrafficVolume()) {
+	                return 1;
+	            }else {
+	            	return -1;
+	            }
+			
+			}
+		});
+	    return keyPlotDatalist;
+	}
+------------------------------------------算法 start-----------------------------------------------------------------------
+
+package sward_offer;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.Scanner;
+
+/**
+ * 插入算法
+ */
+public class InsertAlgorithm {
+
+    /**
+     * 优化后
+     * 优化思想：将插入元素单独提出来，最终比较大小后，再将插入元素放置在对应的插入位置
+     * @param oldArr
+     */
+    public static void sort(int[] oldArr){
+        for(int i=1;i<oldArr.length;i++){
+            int insertValue=oldArr[i];
+            int j=i-1;
+            for(;j>=0&&insertValue<oldArr[j];j--){
+                oldArr[j+1]=oldArr[j];
+            }
+            oldArr[j+1]=insertValue;
+        }
+    }
+
+    /**
+     * 优化前
+     * 思路：将前后两个元素进行交换赋值，尤其注意的是，需要先将插入元素提出来，不能放在第二个for循环中
+     * @param oldArr
+     */
+    public static void sort_(int[] oldArr){
+
+        for(int i=1;i<oldArr.length;i++){
+            int j=i-1;
+            int temp=oldArr[i];
+            for(;j>=0;j--){
+//              int temp=oldArr[i];    //不能放在此处，因为oldArr[i]中的值有可能是交换过的值，不是之前插入的那个值
+                if(temp<oldArr[j]){
+                    oldArr[j+1]=oldArr[j];
+                    oldArr[j]=temp;
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+
+        Scanner scanner=new Scanner(System.in);
+        System.out.println("请输入一串数字，中间用逗号隔开");//这句话必须写在nextline之前
+        String tempStr=scanner.nextLine();
+        System.out.println("tempStr:"+tempStr);
+
+        String[] tempArr=tempStr.split(" ");
+
+        //将字符串数组转换成数字数组，转化时，要trim
+        int[] sortArr=new int[tempArr.length];
+        
+        int k=0;
+         for(int i=0;i<tempArr.length;i++){
+            String temp=tempArr[i].trim();
+            if(!"".equals(temp)){
+                sortArr[k]=Integer.parseInt(temp);
+                k++;
+            }
+        }
+//        sort(sortArr);
+        sort_(sortArr);
+        System.out.println("元素："+ Arrays.toString(sortArr));
+    }
+}
+
+//对time进行处理，获取24小时前的时间
+	private String dealTime_24Hour(String time) {
+		DateFormat df=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+		String time_24="";//
+		try {
+			long dif=df.parse(time).getTime()-86400*1000;
+			Date date=new Date();
+			date.setTime(dif);
+			time_24=df.format(date);
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		return time_24;
+	}
+	
+//中间时间间隔天数
+		/*int day=1;
+    	if(queryFields != null) {
+			//给列名指定表限定名
+			for(QueryField field : queryFields) {
+				String propName = field.getColumnName();
+				String columnName = propName;
+				if("TRAVEL_DATE".equals(columnName)) {
+					
+					String travelDate = field.getQueryValue();
+					String[] arr=travelDate.split("\\|");
+					System.out.println("arr-0:"+arr[0]+" arr-1:"+arr[1]);
+					SimpleDateFormat formatter = new SimpleDateFormat("yyyy-MM-dd");
+					String startStr=arr[0]+" 00:00:00";
+					String endStr=arr[1]+" 23:59:59";
+					
+					Date start=Cast.toDate((Date) formatter.parse(startStr), new Date(0));
+					Date end=Cast.toDate((Date) formatter.parse(endStr), new Date(0));
+					day=(int) ((end.getTime()-start.getTime())/(1000*3600*24))+1;
+				}
+			}
+		}*/
+
+时间最后一位带了一个0，如2019-11-30 13:38:06.0
+------------------------------------------算法 end-----------------------------------------------------------------------
+
+------------------------------------------IntelliJ idea start-----------------------------------------------------------------------
+Project Structure->Modules->add Content Root    //左侧项目目录结构消失，只显示External Libraries
+
+
+------------------------------------------IntelliJ idea end-----------------------------------------------------------------------
+
+------------------------------------------git  start-----------------------------------------------------------------------
+
+git add .          //将目录下的添加到
+
+
+
+
+------------------------------------------git  end-----------------------------------------------------------------------
+
+
+------------------------------------------mysql start-----------------------------------------------------------------------
+
+mysql -h localhost -u root -p123        /*mysql连接本地数据库,注意：-p后面紧跟密码，中间不能有空格 */  
+
+mysql -h localhost -u root -p           /*mysql连接本地数据库,隐藏密码，注意：-p后面紧跟密码，中间不能有空格  且输入后，后面不用加分号，否则不提醒输入密码*/  
+Enter password：
+                                     
+mysql -h 192.168.10.201 -P 3306 -u root -p123 -D testDB  /*mysql连接远程数据库,注意：-p后面紧跟密码，中间不能有空格，-D 后面是数据库名称 远程连接之前，可以先ping一下IP地址*/
+
+mysql创建表结构，执行sql语句，comment中文乱码，未解决
+
+mysql直接执行.sql文件的两种方式
+source D:\BaiduNetdiskDownload\solr\solr\res\数据库\lucene.sql         source后面直接跟具体路径，注意 中间有空格
+\. D:\BaiduNetdiskDownload\solr\solr\res\数据库\lucene.sql            \.后面跟具体路径，注意 中间有空格
+
+
+
+show variables like 'log_queries_not_using_indexes'\G;             /*慢查询中，是否使用了索引，off代表没有使用，on代表使用*/
+
+
+status                                  /*查看mysql的状态*/
+
+show table status like 'table_name%'; /*查看当前表使用的行格式*/
+
+
+
+update tc_all_dict t set t.CODE_VALUE='520115' , t.CODE_NAME='观山湖区' where t.OID='7620';//mysql更新语句，set中间用逗号，不是and
+
+使用AVG聚合函数时，保留四位小数的方法
+ select HOUR(t1.STATISTICAL_TIME),t1.STATION_NAME,CAST(AVG(t1.peak_hour_boarding_rate) as DECIMAL(11,4)) as peak_hour_boarding_rate,CAST(AVG(t1.PEAK_HOUR_DROP_OFF_RATE) as DECIMAL(11,4)) as PEAK_HOUR_DROP_OFF_RATE,CAST(AVG(t1.PASSENGER_FLOW) as DECIMAL(11,4)) as PASSENGER_FLOW,CAST(AVG(t1.CURRENT_PASSENGER_FLOW) as DECIMAL(11,4)) as CURRENT_PASSENGER_FLOW,CAST(AVG(t1.ACCUMULATE_PASSENGER_FLOW_DAY) as DECIMAL(11,4)) as ACCUMULATE_PASSENGER_FLOW_DAY from ts_kljc_passenger_flow t1 left join TR_GL_Passenger_STATION t2 on t1.STATION_NAME=t2.`NAME` where t1.STATION_NAME ='金阳客运站'  GROUP BY HOUR(t1.STATISTICAL_TIME ) ORDER BY HOUR(t1.STATISTICAL_TIME) desc;
+
+TImeStamp类型，查出来后，后面带毫秒[2019-11-30 13:38:06.0]
+
+Date类型在mysql中，只具体到年月日，在Oracle中可以是年月日/也可以是年月日时分秒
+
+DateTime类型，在mysql中，是年月日时分秒
+
+TimeStamp是年月日时分秒毫秒
+Java里只有timestamp和date两种类型，没有datetime类型，所以关于时分秒的，获取数据时，是timestamp类型
+
+mysql 没有dual表
+
+insert into ts_kljc_passenger_attract (id,ATTRACTED_NAME,lon,lat,STATISTICS_DATE) value
+(REPLACE(UUID(),"-",""),"黔灵山公园","106.34060400","26.32542300",NOW());
+UUID()函数，生成的随机数是36位，可以使用REPLACE函数来替换-
+
+大小写敏感，linux下默认是大小写敏感，
+------------------------------------------mysql end-------------------------------------------------------------------------
+
+[{"widgetid": "27", "pos": {"x": 6, "y": 0, "width": 6, "height": 5},
+ "type": "url", "name": "test34445", "fields": {"url": "http://www.163.com"}}, {"pos": {"x": 0, "y": 0, "width": 6, "height": 5}, 
+"type": "url", "name": "test344", "fields": {"rf_rate": "0", "url": "https://www.baidu.com", "dynamic": "0"}}]
+
+
+xshell
+
+新建session，选择
+
+14*164
+
+
+
+
+------------------------------------------linux start-----------------------------------------------------------------------
+
+
+systemctl start firewalld.service        /*开启防火墙*/
+systemctl restart firewalld.service      /*重启防火墙*/
+systemctl stop firewalld                 /*关闭防火墙 centos7后面默认的是firewalld*/
+
+service iptables stop                    /*关闭防火墙 在centos7中使用该命令，会报错：Failed to stop iptables.service: Unit iptables.service not loaded.*/
+
+ctrl+shift+T                             /*重新打开一个新的终端窗口*/
+ctrl+C                                   /*强制终止当前进程，暴力、霸道，exit等命令不起作用，无法退出终端时，可以使用*/
+ctrl+Z                                   /*将当前进程进行挂起，并没有真正关闭*/
+
+java -version                            /*jdk版本号*/
+                                         /*查看目录的权限 */
+rm -rf filedir                           /*删除文件夹，直接删除，不会给出任何信息，切记不可使用rm -rf，使用了一切boom */     
+                                         /*-r 向下递归删除  -f直接强制删除，没有任何提示*/
+rm -ir filedir                           
+rm -f filename                           /*删除文件*/
+
+mv /home/solr/solr-7.7.2 /home/solr/temp
+
+
+          /*开启端口*/
+
+mkdir -m 755 solr
+
+444 r--r--r--
+600 rw-------
+644 rw-r--r--
+666 rw-rw-rw-
+700 rwx------
+744 rwxr--r--
+755 rwxr-xr-x
+777 rwxrwxrwx
+
+
+
+虚拟机中浏览器连接不上网络，
+
+
+查看系统环境
+
+vi操作
+
+
+
+vim操作 
+
+i                                      /*对文件进行编辑*/
+:wq                                    /*保存退出*/
+!:q                                 
+:q                                    /*不保存退出*/
+
+
+------------------------------------------linux end-------------------------------------------------------------------------
+------------------------------------------ligerUI start------------------------------------------------------------------
+
+ligerui table行高：rowHeight  Int	行默认的高度	22
+
+------------------------------------------ligerUI end------------------------------------------------------------------
+
+
+------------------------------------------JavaScript start------------------------------------------------------------------
+
+
+浏览器窗口在拖拽的过程中，会发生变化
+$(document).onresize(function(){
+    
+	var winWidth=window.innerWidth||document.body.clientWidth;   //浏览器窗口的净窗口大小，剔除了边框等大小的影响
+	//var width=$(document).width();      采用这种方法，计算的不太准确
+		
+});
+
+String转数组
+
+JSON.stringify(JsonObject);
+
+JSON对象 ==> String
+
+JSON.stringify(JsonObject);
+1
+String ==> JSON对象
+
+JSON.parse(String);
+
+eval 解释器中不能出现分号；
+json中不能有分号，分号不识别，用eval和JSON.parse(String)都会出错
+
+遍历对象
+for (var item in obj){
+    str +=item+":"+obj[item]+"\n";
+}
+TR_KLJC_PASSENGER_FLOW_ATTRAC_AERA
+
+js里面数字相加问题     ATTRACTED_NAME
+
+
+	QueryField queryField=new QueryField();
+		queryField.setQueryValue("999");
+		queryField.setColumnName("t2.START_POINT");
+		queryField.setDataType("String");
+		queryField.setOperator("isNotNull");
+		queryFields.add(queryField);
+			
+
+parseInt()     将字符串强转为整数类型。
+parseDouble()  将字符串强转为double类型
+parseFloat()   将字符串强转为浮点类型。
+
+for循环里面的break;和continue;语句
+
+ //break只中断了最内层循环，外层循环还在继续
+ 如果你这个break就是想终止所有的循环，那么JS中允许你给循环语句加label
+
+
+$("p").next(".selected").css("background", "yellow");
+
+
+两个div，水平放置，并且高度一致
+
+<div id="maingrid1" class="layui-tab-item layui-show"></div>
+	<div id="maingrid2" class="layui-tab-item layui-show"></div>
+	
+	修改为
+<div style="float:left;width:50%;">
+	   <div id="maingrid1" class="layui-tab-item layui-show"></div>
+	</div>
+	<div style="float:left;width:50%;">
+	   <div id="maingrid2" class="layui-tab-item layui-show"></div>
+	</div>
+
+select change事件失效
+$("").live('change',function(){});//不可取
+		alert("cccc");
+		var selectValue=$(this).val();
+		console.log("setValue:"+selectValue);
+		if(selectValue=="0"){
+			$(".dkQueryPanelRow").append('<li id="pnl_travelDate" class="dk_pnl_query_field inline_block dk_pnl_query_field2 always_show"'+ 
+				'data-propname="travelDate" data-label="出行时间" data-operator="between" data-visible="visible" data-datatype="DateTime">'+
+					'<label class="inline_block"  for="travelDate11">出行时间</label>'+
+					'<input type="text" id="travelDate11" name="travelDate" maxlength="12"'+ 
+					'class="dkInput queryField dkTab form-control dkDate dkText inline_block" style="width:100px;"/>'+
+					'<span class="inline_block">-</span>'+
+					'<input type="text" id="travelDate12" name="travelDate" maxlength="12"'+
+						'class="dkInput queryField dkTab form-control dkDate dkText inline_block" style="width:100px;"/></li>');
+			
+		}else{
+			alert(selectValue);
+		}
+	
+for循环删除其中一个节点
+for(var i in queryFields){
+	var temp=queryFields[i];
+	if(temp.columnName=="statisticalDimension"){
+		queryFields.splice(i,1);
+	}
+}	
+
+<ul><li>标签：$("ul li:gt(2)").remove();  //仅保留前两个，后两个删除
+$("#pnl_travelDate").empty();//清空标签中的子元素
+$("#pnl_travelDate").remove();//删除标签
+
+------------------------------------------JavaScript end------------------------------------------------------------------
+
+------------------------------------------echart start------------------------------------------------------------------
+s1s24af$!DT
+
+geo->scaleLimit:{min:1,max:5},  map伸缩范围
+geo->roam: true,   //鼠标缩放和平移
+geo   //map背景设置
+itemStyle: {
+		            normal: {               
+		                borderColor: 'rgba(147, 235, 248, 1)',
+		                borderWidth: 1,
+		                areaColor: {
+		                    type: 'radial',
+		                    x: 0.5,
+		                    y: 0.5,
+		                    r: 0.8,
+		                    colorStops: [{
+		                        offset: 0,
+		                        color: 'rgba(112,172,238, 0.5)' // 0% 处的颜色
+		                    }, {
+		                        offset: 1,
+		                        color: 'rgba(112,172,238, 1)' // 100% 处的颜色
+		                    }],
+		                    globalCoord: false // 缺省为 false
+		                },
+		                shadowColor: 'rgba(128, 217, 248, 1)',
+		                // shadowColor: 'rgba(255, 255, 255, 1)',
+		                shadowOffsetX: -2,
+		                shadowOffsetY: 2,
+		                shadowBlur: 10
+		            },
+		            emphasis: {
+		                areaColor: '#4fa1fc',
+		                borderWidth: 0
+		            }
+		        }
+
+Uncaught Error: series.type should be specified.  series中缺少type eg:series.type='scatter'
+
+visualMap 将数据进行多个维度的映射
+
+------------------------------------------echart end------------------------------------------------------------------
+
+------------------------------------------SqlDeveloper start--------------------------------------------------------------
+
+
+1、工具栏->查看->连接                     //左侧连接导航窗口不小心关闭，打开方式
+   工具栏->窗口->将窗口恢复成出厂设置     
+
+
+------------------------------------------SqlDeveloper end--------------------------------------------------------------
+
+
+-----------------------------------------------solr start--------------------------------------------------------------------------
+
+solr启动命令
+sole.cmd start
+
+
+
+-----------------------------------------------solr end--------------------------------------------------------------------------
+
+-----------------------------------------------redis start--------------------------------------------------------------------------
+redis端口telnet不通，redis.conf中修改
+
+redis启动命令
+redis-server.exe redis.windows.conf
+
+-----------------------------------------------redis end--------------------------------------------------------------------------
+
+-----------------------------------------------tomcat start--------------------------------------------------------------------------
+tomcat发布程序时，可以通过tomcat
+tomcat设置：
+-Dcatalina.home=E:\Tomcat 8.5
+-Dcatalina.base=E:\Tomcat 8.5
+-Djava.io.tmpdir=E:\Tomcat 8.5\temp
+-Djava.util.logging.manager=org.apache.juli.ClassLoaderLogManager
+-Djava.util.logging.config.file=E:\Tomcat 8.5\conf\logging.properties
+-XX:PermSize=512M 
+-XX:MaxPermSize=2048m
+
+
+-----------------------------------------------tomcat end--------------------------------------------------------------------------
+
+
+
+-----------------------------------------------硬件 start--------------------------------------------------------------------------
+
+1、移动硬盘插在电脑上，不显示，只在设备处理器处->其他显示，右击->删除，将硬盘重新插进电脑，硬盘会显示
+
+
+
+-----------------------------------------------硬件 end--------------------------------------------------------------------------
+
+
+
+
+
+-----------------------------------------------gradle start--------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+自我介绍
+3W  (who ,why i am here ,what 我能给你带来什么)
+
+我是谁
+我为什么要给你写信
+我希望得到你的什么帮助
+
+
+概况优点。长处
+说一些可有可无的缺点
+
+
+数据中心建设
+
+
+
+
+
+
+
+
+
+
+
+"JTYJ-YXJC-KLJC"
+
+
+
+
+view/chinatransinfo/kljc/passengerAttractArea/lwtj_tmapTool.ftl
+
+view/chinatransinfo/lwjc/yxjc/lwtj_tmapTool.ftl
+
+
+
+
+
+
+
+if(null==attractName) {
+			System.out.println("attractNmae wei null");
+		}
+		if("null".equals(attractName)) {
+			System.out.println("true");
+		}else {
+			System.out.println("false");
+		}
+
+
+
+
+
+
+
+3年开发经验，主要参与政府相关的交通行业的千万级web系统平台的开发工作，经过不断学习提高，目前掌握技能有：
+
+1. 熟练掌握java基础知识，具有良好的面向对象的编程思想;
+2. 了解solr，会搭建solr发布服务，用solr实现搜索功能及全量索引更新的实现;
+3. 熟练使用mysql数据库，熟悉oracle，redis数据库，熟悉SQL语句操作;
+4. linux操作系统（包括服务器配置、环境搭建）; 
+5. 熟悉Spring、SpringMVC、SpringBoot、Solr等框架;
+6. 熟练使用Eclipse、SVN和Gradle等开发工具、项目管理和项目构建工具;
+
+
+
+简要总结每天的工作内容
+1.想干什么（为什么）
+2.怎么干（方法）
+3.结果
+方便我回顾自己的长期工作，总结自己的特点，针对性提升。
+
+
+
