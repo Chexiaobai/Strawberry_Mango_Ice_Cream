@@ -36,16 +36,39 @@ public class PalindromeNum {
         }
 
     }
+    public static  void checkNumInStringOprimization(String temp){
+
+        char[] tempArr = temp.toCharArray();
+
+        boolean isPalindrome = false;
+        for (int i=0;i<tempArr.length/2;i++){
+            if(tempArr[i]!=tempArr[temp.length()-1-i]){
+                isPalindrome = false;
+                break;
+            }else{
+                isPalindrome = true;
+                continue;
+            }
+        }
+        System.out.println("是否是回文数："+isPalindrome);
+    }
+
+    /**
+     * 回文，数字不转成字符串
+     * 思路：123456
+     * @return
+     */
     public static int checkNumWithoutString(){
 
-
+        return 0;
     }
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         BigInteger temp = new BigInteger(String.valueOf(scan.nextBigInteger()));
         try {
             //将数字放进字符数组中
-            PalindromeNum.checkNumInString(temp.toString());
+            //PalindromeNum.checkNumInString(temp.toString());
+            PalindromeNum.checkNumInStringOprimization(temp.toString());
             //PalindromeNum.checkNumWithoutString();
 
         } catch (Exception e) {

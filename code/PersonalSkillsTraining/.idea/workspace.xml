@@ -1,31 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="77d0c3ee-6029-4fb5-8dd7-be01f96a7d25" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/sward_offer/Recursion.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/org_thymeleaf_thymeleaf_Release.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/org_thymeleaf_thymeleaf_Release.xml" afterDir="false" />
+    <list default="true" id="be161c17-2914-4d7c-b9fd-037dd91a589e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/PersonalSkillsTraining.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/org_thymeleaf_thymeleaf_Release.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/uiDesigner.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/PersonalSkillsTraining/sward_offer/BubbleSortAlgrithm.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PersonalSkillsTraining/sward_offer/BubbleSortAlgrithm.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PersonalSkillsTraining.iml" beforeDir="false" afterPath="$PROJECT_DIR$/PersonalSkillsTraining.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/PersonalSkillsTraining/sward_offer/PalindromeNum.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/PersonalSkillsTraining/sward_offer/PalindromeNum.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../学习总结/JavaScript基础知识.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../../学习总结/JavaScript基础知识.docx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FavoritesManager">
-    <favorites_list name="PersonalSkillsTraining" />
-  </component>
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="Class" />
-      </list>
-    </option>
-  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
-  <component name="ProjectId" id="1m83SUJ3KB3lr7ezBU6gW6Km7F1" />
+  <component name="ProjectId" id="1mH8Y23tQk55AsQRZ90ygvvSlFB" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -33,69 +28,11 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
-    <property name="Downloaded.Files.Path.Enabled" value="false" />
-    <property name="Repository.Attach.JavaDocs" value="false" />
-    <property name="Repository.Attach.Sources" value="false" />
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1566813410079" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
-    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.15" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.tools" />
   </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\myproject\idea\PersonalSkillsTraining\src\concurrence" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\myproject\idea\PersonalSkillsTraining\src\sward_offer" />
-      <recent name="D:\myproject\idea\PersonalSkillsTraining\src\basic\collection\map\hash" />
-    </key>
-  </component>
-  <component name="RunManager" selected="Application.PalindromeNum">
-    <configuration name="BubbleSortAlgrithm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="sward_offer.BubbleSortAlgrithm" />
-      <module name="PersonalSkillsTraining" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sward_offer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="InsertAlgorithm (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="sward_offer.InsertAlgorithm" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sward_offer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="InsertAlgorithm" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="sward_offer.InsertAlgorithm" />
-      <module name="PersonalSkillsTraining" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sward_offer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager">
     <configuration name="PalindromeNum" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="sward_offer.PalindromeNum" />
       <module name="PersonalSkillsTraining" />
@@ -109,33 +46,9 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Recursion" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="sward_offer.Recursion" />
-      <module name="PersonalSkillsTraining" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="sward_offer.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <list>
-      <item itemvalue="Application.InsertAlgorithm" />
-      <item itemvalue="Application.InsertAlgorithm (1)" />
-      <item itemvalue="Application.BubbleSortAlgrithm" />
-      <item itemvalue="Application.Recursion" />
-      <item itemvalue="Application.PalindromeNum" />
-    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.PalindromeNum" />
-        <item itemvalue="Application.Recursion" />
-        <item itemvalue="Application.BubbleSortAlgrithm" />
-        <item itemvalue="Application.InsertAlgorithm" />
-        <item itemvalue="Application.InsertAlgorithm (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -156,216 +69,38 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="77d0c3ee-6029-4fb5-8dd7-be01f96a7d25" name="Default Changelist" comment="" />
-      <created>1547788468752</created>
+      <changelist id="be161c17-2914-4d7c-b9fd-037dd91a589e" name="Default Changelist" comment="" />
+      <created>1609139204161</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1547788468752</updated>
-      <workItem from="1547788475455" duration="7094000" />
-      <workItem from="1547800871236" duration="3708000" />
-      <workItem from="1548294427992" duration="9790000" />
-      <workItem from="1548379322383" duration="13032000" />
-      <workItem from="1550126594605" duration="14351000" />
-      <workItem from="1553503266443" duration="599000" />
-      <workItem from="1555555755710" duration="103000" />
-      <workItem from="1564559577935" duration="5867000" />
-      <workItem from="1564629202453" duration="20691000" />
-      <workItem from="1564974217298" duration="9601000" />
-      <workItem from="1565589051226" duration="32059000" />
-      <workItem from="1565687793702" duration="9134000" />
-      <workItem from="1565782484022" duration="20890000" />
-      <workItem from="1566283286006" duration="2307000" />
-      <workItem from="1566440339924" duration="15680000" />
-      <workItem from="1566527371228" duration="14022000" />
-      <workItem from="1566784462583" duration="12810000" />
-      <workItem from="1608861393711" duration="6263000" />
-      <workItem from="1608877281897" duration="12626000" />
+      <updated>1609139204161</updated>
+      <workItem from="1609139213023" duration="4267000" />
     </task>
-    <task id="LOCAL-00001" summary="回文数">
-      <created>1608889829971</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1608889829971</updated>
-    </task>
-    <option name="localTasksCounter" value="2" />
     <servers />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
-  <component name="VcsManagerConfiguration">
-    <MESSAGE value="回文数" />
-    <option name="LAST_COMMIT_MESSAGE" value="回文数" />
-  </component>
   <component name="WindowStateProjectService">
-    <state x="679" y="116" key="CommitChangelistDialog2" timestamp="1608889823078">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom" timestamp="1609143689299">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="679" y="116" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1608889823078" />
-    <state width="432" height="466" key="DebuggerActiveHint" timestamp="1608887322295">
+    <state width="1877" height="282" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1609143689299" />
+    <state width="1877" height="282" key="GridCell.Tab.0.center" timestamp="1609143689299">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="432" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1608887322295" />
-    <state width="1877" height="243" key="GridCell.Tab.0.bottom" timestamp="1609120228773">
+    <state width="1877" height="282" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1609143689299" />
+    <state width="1877" height="282" key="GridCell.Tab.0.left" timestamp="1609143689299">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="243" key="GridCell.Tab.0.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1609120228773" />
-    <state width="1877" height="243" key="GridCell.Tab.0.center" timestamp="1609120228773">
+    <state width="1877" height="282" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1609143689299" />
+    <state width="1877" height="282" key="GridCell.Tab.0.right" timestamp="1609143689299">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="243" key="GridCell.Tab.0.center/0.0.1920.1040@0.0.1920.1040" timestamp="1609120228773" />
-    <state width="1877" height="243" key="GridCell.Tab.0.left" timestamp="1609120228773">
+    <state width="1877" height="282" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1609143689299" />
+    <state x="752" y="350" key="com.intellij.ide.util.TipDialog" timestamp="1609139214331">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state width="1877" height="243" key="GridCell.Tab.0.left/0.0.1920.1040@0.0.1920.1040" timestamp="1609120228773" />
-    <state width="1877" height="243" key="GridCell.Tab.0.right" timestamp="1609120228773">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="243" key="GridCell.Tab.0.right/0.0.1920.1040@0.0.1920.1040" timestamp="1609120228773" />
-    <state width="1877" height="243" key="GridCell.Tab.1.bottom" timestamp="1609120228773">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="243" key="GridCell.Tab.1.bottom/0.0.1920.1040@0.0.1920.1040" timestamp="1609120228773" />
-    <state width="1877" height="243" key="GridCell.Tab.1.center" timestamp="1609120228773">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="243" key="GridCell.Tab.1.center/0.0.1920.1040@0.0.1920.1040" timestamp="1609120228773" />
-    <state width="1877" height="243" key="GridCell.Tab.1.left" timestamp="1609120228773">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="243" key="GridCell.Tab.1.left/0.0.1920.1040@0.0.1920.1040" timestamp="1609120228773" />
-    <state width="1877" height="243" key="GridCell.Tab.1.right" timestamp="1609120228773">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state width="1877" height="243" key="GridCell.Tab.1.right/0.0.1920.1040@0.0.1920.1040" timestamp="1609120228773" />
-    <state x="815" y="247" key="Vcs.Push.Dialog.v2" timestamp="1608890502477">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="815" y="247" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1608890502477" />
-    <state x="613" y="368" key="com.intellij.ide.util.TipDialog" timestamp="1608877296276">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="613" y="368" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1608877296276" />
-    <state x="748" y="264" width="647" height="524" key="find.popup" timestamp="1609117870610">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="748" y="264" width="647" height="524" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1609117870610" />
-    <state x="674" y="315" width="672" height="678" key="search.everywhere.popup" timestamp="1608878490758">
-      <screen x="0" y="0" width="1920" height="1040" />
-    </state>
-    <state x="674" y="315" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1608878490758" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/sward_offer/Recursion.java</url>
-          <line>44</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
-  </component>
-  <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/PersonalSkillsTraining$PalindromeNum.ic" NAME="PalindromeNum Coverage Results" MODIFIED="1608878427348" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
-      <FILTER>sward_offer.*</FILTER>
-    </SUITE>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ArtifactsStructureConfigurable.UI">
-        <settings>
-          <artifact-editor />
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="FacetStructureConfigurable.UI">
-        <settings>
-          <last-edited>No facets are configured</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="GlobalLibrariesConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="JdkListConfigurable.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ModuleStructureConfigurable.UI">
-        <settings>
-          <last-edited>PersonalSkillsTraining</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-                <option value="0.6" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ProjectLibrariesConfigurable.UI">
-        <settings>
-          <last-edited>org.thymeleaf:thymeleaf:Release</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-      <state key="ScopeChooserConfigurable.UI">
-        <settings>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
+    <state x="752" y="350" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1609139214331" />
   </component>
 </project>
